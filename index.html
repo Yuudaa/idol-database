@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>K-Pop Idol Database</title>
+  <link rel="stylesheet" href="stel.css">
+  <style>
+    .hidden { display: none; }
+    .popup {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+    .popup img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border: 5px solid white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>K-Pop Idol Database</h1>
+    <div style="position: absolute; top: 20px; right: 20px;">
+      <button id="btnAdd">+</button>
+      <button id="btnHome">Beranda</button>
+      <button id="btnBackup">Backup</button>
+      <button id="btnRestore">Restore</button>
+      <input type="file" id="restoreFile" accept=".json" style="display: none;">
+    </div>
+  </header>
+
+  <!-- Beranda -->
+  <div id="homeView">
+    <div class="filter-bar">
+      <select id="filterType">
+        <option value="all">Semua Jenis</option>
+        <option value="girlgroup">Girl Group</option>
+        <option value="boygroup">Boy Group</option>
+        <option value="soloist">Solois</option>
+      </select>
+      <select id="filterAgency">
+        <option value="all">Semua Agensi</option>
+      </select>
+      <select id="filterGen">
+        <option value="all">Semua Generasi</option>
+        <option value="gen2">Gen 2 (2010-2014)</option>
+        <option value="gen3">Gen 3 (2015-2019)</option>
+        <option value="gen4">Gen 4 (2020-2024)</option>
+        <option value="gen5">Gen 5 (2025-2029)</option>
+        <option value="gen6">Gen 6 (2030+)</option>
+      </select>
+      <input type="text" id="searchInput" placeholder="Cari idol...">
+    </div>
+    <div class="idol-list" id="idolList"></div>
+  </div>
+
+  <!-- Tambah Idol -->
+  <div id="addView" class="hidden">
+    <h2>Tambah Idol</h2>
+    <form id="idolForm">
+      <input type="text" id="idolName" placeholder="Nama Grup/Idol" required><br>
+      <input type="text" id="idolAgency" placeholder="Agensi" required><br>
+      <input type="date" id="idolDebut" required><br>
+      <input type="number" id="idolMemberCount" placeholder="Jumlah Member" required><br>
+      <select id="idolType" required>
+        <option value="girlgroup">Girl Group</option>
+        <option value="boygroup">Boy Group</option>
+        <option value="soloist">Solois</option>
+      </select><br>
+      <input type="file" id="idolImage" accept="image/*" required><br>
+      <input type="number" id="idolWins" placeholder="Jumlah Music Show Win" required><br>
+      <button type="submit">Simpan</button>
+    </form>
+  </div>
+
+  <!-- Detail View -->
+  <div id="detailView" class="hidden">
+    <button id="backToHome">Kembali</button>
+    <div id="detailContent"></div>
+    <h3>Member</h3>
+    <div id="memberList"></div>
+    <button id="btnAddMember">+ Tambah Member</button>
+    <form id="memberForm" class="hidden">
+      <input type="text" id="memberName" placeholder="Nama Member" required><br>
+      <input type="text" id="memberPosition" placeholder="Posisi" required><br>
+      <input type="date" id="memberBirth" required><br>
+      <input type="file" id="memberPhoto" accept="image/*" required><br>
+      <button type="submit">Tambah Member</button>
+    </form>
+  </div>
+
+  <div id="popup" class="popup">
+    <img id="popupImage" src="" alt="popup">
+  </div>
+
+  <!-- Tarik script dari file JS terpisah -->
+  <script src="scrip.js"></script>
+</body>
+</html>
