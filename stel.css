@@ -1,0 +1,153 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to bottom right, #f0f8ff, #e6f0ff);
+  margin: 0;
+  padding: 0;
+  color: #2f3640;
+}
+
+header {
+  background: linear-gradient(to right, #4b6cb7, #182848);
+  color: white;
+  padding: 1.5rem 2rem;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+button {
+  background-color: #44bd32;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #4cd137;
+  transform: scale(1.05);
+}
+
+input, select {
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  font-size: 14px;
+  background-color: #ffffff;
+}
+
+form {
+  margin: 1.5rem 0;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.idol-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 2rem;
+  justify-content: center;
+}
+
+.idol-card {
+  background: linear-gradient(to bottom, #ffffff, #f1f2f6);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1rem;
+  text-align: center;
+  width: 200px;
+  transition: transform 0.2s ease;
+}
+
+.idol-card:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.idol-card img {
+  border-radius: 12px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background-color: #dcdde1;
+  border-bottom: 1px solid #ccc;
+  justify-content: center;
+}
+
+#detailView, #addView {
+  padding: 2rem;
+}
+
+#detailView img {
+  max-width: 250px;
+  border-radius: 12px;
+  margin-top: 1rem;
+}
+
+#memberList ul {
+  list-style: none;
+  padding: 0;
+}
+
+#memberList li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f7f7f7;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+#memberList img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border: 3px solid #ccc;
+  transition: transform 0.2s ease;
+}
+
+#memberList img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .idol-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}
